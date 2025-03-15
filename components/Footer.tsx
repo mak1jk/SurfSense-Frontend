@@ -47,7 +47,7 @@ export function Footer() {
         </div>
         <div className="flex sm:flex-row flex-col justify-between mt-8 items-center w-full">
           <p className="text-neutral-500 dark:text-neutral-400 mb-8 sm:mb-0">
-            &copy; SurfSense 2023
+            &copy; SurfSense 2025
           </p>
           <div className="flex gap-4">
             <Link href="https://x.com/mod_setter">
