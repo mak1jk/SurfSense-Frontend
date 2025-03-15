@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-import { Toaster } from "@/components/ui/toaster";
-import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 
-
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ 
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: 'swap',
+  variable: '--font-roboto',
+});
 
 export const metadata: Metadata = {
 	title: "SurfSense - A Personal NotebookLM and Perplexity-like AI Assistant for Everyone.",
@@ -41,29 +45,29 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">
-        <body
-          className={cn(
-            inter.className,
-            "bg-white dark:bg-black antialiased h-full w-full"
-          )}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          roboto.className,
+          "bg-white dark:bg-black antialiased h-full w-full"
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          enableSystem
+          disableTransitionOnChange
+          defaultTheme="light"
         >
-          <ThemeProvider
-            attribute="class"
-            enableSystem
-            disableTransitionOnChange
-            defaultTheme="light"
-          >
-            {children}
-            <Toaster />
-          </ThemeProvider>
-        </body>
-      </html>
+          {children}
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

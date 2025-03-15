@@ -1,9 +1,5 @@
-import { LoginForm } from "@/components/logins/LoginForm"
+import { GoogleLoginButton } from "./GoogleLoginButton";
 
-const page = () => {
-  return (
-    <><LoginForm /></>
-  )
-}
-
-export default page
+export default function LoginPage() {
+  return <GoogleLoginButton />;
+} 

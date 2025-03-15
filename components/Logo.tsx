@@ -2,21 +2,20 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-export const Logo = () => {
+export const Logo = ({ className }: { className?: string }) => {
   return (
     <Link
       href="/"
-      className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20"
     >
       <Image
         src="/icon-128.png"
-        className="rounded-full"
+        className={cn(className)}
         alt="logo"
-        width={30}
-        height={30}
+        width={128}
+        height={128}
       />
-      <span className="font-medium text-black dark:text-white">SurfSense</span>
     </Link>
   );
 };
