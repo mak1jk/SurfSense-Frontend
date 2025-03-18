@@ -242,7 +242,7 @@ const MobileNav = ({ navItems, visible }: NavbarProps) => {
         } as React.CSSProperties}
       >
         <div className="flex flex-row justify-between items-center w-full">
-          <Logo />
+        <Logo className="h-8 w-8 rounded-md" /> 
           <div className="flex items-center gap-2">
             <ThemeTogglerComponent />
             {open ? (
