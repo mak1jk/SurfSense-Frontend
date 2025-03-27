@@ -37,6 +37,12 @@ export const useSearchSourceConnectors = () => {
       name: "File",
       type: "FILE",
       sources: [],
+    },
+    {
+      id: 3,
+      name: "Extension",
+      type: "EXTENSION",
+      sources: [],
     }
   ]);
 
@@ -95,6 +101,12 @@ export const useSearchSourceConnectors = () => {
         id: 2,
         name: "File",
         type: "FILE",
+        sources: [],
+      },
+      {
+        id: 3,
+        name: "Extension",
+        type: "EXTENSION",
         sources: [],
       }
     ];

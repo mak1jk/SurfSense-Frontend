@@ -5,7 +5,7 @@ import { Source, Connector } from './types';
  * Function to get sources for the main view
  */
 export const getMainViewSources = (connector: Connector, initialSourcesDisplay: number) => {
-  return connector.sources.slice(0, initialSourcesDisplay);
+  return connector.sources?.slice(0, initialSourcesDisplay);
 };
 
 /**
@@ -17,7 +17,7 @@ export const getFilteredSources = (connector: Connector, sourceFilter: string) =
   }
   
   const filter = sourceFilter.toLowerCase().trim();
-  return connector.sources.filter(source => 
+  return connector.sources?.filter(source => 
     source.title.toLowerCase().includes(filter) || 
     source.description.toLowerCase().includes(filter)
   );
@@ -38,7 +38,7 @@ export const getPaginatedDialogSources = (
   if (expandedSources) {
     return filteredSources;
   }
-  return filteredSources.slice(0, sourcesPage * sourcesPerPage);
+  return filteredSources?.slice(0, sourcesPage * sourcesPerPage);
 };
 
 /**
@@ -46,7 +46,7 @@ export const getPaginatedDialogSources = (
  */
 export const getSourcesCount = (connectorSources: Connector[], connectorType: string) => {
   const connector = connectorSources.find(c => c.type === connectorType);
-  return connector?.sources.length || 0;
+  return connector?.sources?.length || 0;
 };
 
 /**
@@ -57,7 +57,7 @@ export const getCitationSource = (
   connectorSources: Connector[]
 ): Source | null => {
   for (const connector of connectorSources) {
-    const source = connector.sources.find(s => s.id === citationId);
+    const source = connector.sources?.find(s => s.id === citationId);
     if (source) {
       return {
         ...source,

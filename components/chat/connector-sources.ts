@@ -10,4 +10,9 @@ export const connectorSourcesMenu = [
       name: "File",
       type: "FILE",
     }, 
+    {
+      id: 3,
+      name: "Extension",
+      type: "EXTENSION",
+    },
   ];

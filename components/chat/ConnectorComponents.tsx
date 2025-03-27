@@ -5,13 +5,13 @@ import {
   Search,
   Globe,
   BookOpen,
-  X,
   Sparkles,
   Microscope,
   Telescope,
   File,
   Link,
-  Slack
+  Slack,
+  Webhook
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Connector, ResearchMode } from './types';
@@ -25,6 +25,8 @@ export const getConnectorIcon = (connectorType: string) => {
       return <Globe {...iconProps} />;
     case 'FILE':
         return <File {...iconProps} />;
+    case 'EXTENSION':
+        return <Webhook  {...iconProps} />;
     case 'SERPER_API':
     case 'TAVILY_API':
       return <Link {...iconProps} />;

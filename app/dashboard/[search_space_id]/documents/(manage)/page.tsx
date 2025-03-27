@@ -80,6 +80,7 @@ import {
     File,
     Trash,
     MoreHorizontal,
+    Webhook,
 } from "lucide-react";
 import { useEffect, useId, useMemo, useRef, useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -135,7 +136,7 @@ const statusFilterFn: FilterFn<Document> = (row, columnId, filterValue: string[]
 
 // Add document type icons mapping
 const documentTypeIcons = {
-    EXTENSION: FileText,
+    EXTENSION: Webhook,
     CRAWLED_URL: Globe,
     SLACK_CONNECTOR: IconBrandSlack,
     NOTION_CONNECTOR: IconBrandNotion,
